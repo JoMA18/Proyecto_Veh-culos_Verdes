@@ -1,54 +1,63 @@
 #include <iostream>
+#include <vector>
 #include <string>
 
 using namespace std;
 
-/*Clase madre*/ 
+// Clase Madre
 class Vehiculo {
 protected:
     string matricula;
     string tipo;
 
 public:
-    Vehiculo(string matricula, string tipo) : matricula(matricula), tipo(tipo) {}
-    virtual string Info() const = 0; // Método abstracto
+    Vehiculo(string m, string t) : matricula(m), tipo(t) {}
+
+    virtual string Info() {
+        return "Vehiculo - Matricula: " + matricula + ", Tipo: " + tipo;
+    }
 };
 
-/* Clases hijas 
-Clase Bicicleta*/
+// Clase Hija - BICI
 class Bicicleta : public Vehiculo {
 private:
     string color;
     string tamaño;
 
 public:
-    Bicicleta(string matricula, string tipo, string color, string tamaño) : Vehiculo(matricula, tipo), color(color), tamaño(tamaño) {}
-    string Info() const override { /*sobreescritura para el metodo Info()*/
-        return "Vehículo: Bicicleta - Matricula: " + matricula + ", Tipo: " + tipo + ", Color: " + color + ", Tamaño: " + tamaño;
+    Bicicleta(string m, string t, string c, string tz)
+        : Vehiculo(m, t), color(c), tamaño(tz) {}
+
+    string Info() {
+        return "Bicicleta - Matricula: " + matricula + ", Tipo: " + tipo +
+               ", Color: " + color + ", Tamaño: " + tamaño;
     }
 };
 
-/* Clase Patin */
+// Clase Hija - PATIN
 class Patin : public Vehiculo {
 private:
     string marca;
 
 public:
-    Patin(string matricula, string tipo, string marca) : Vehiculo(matricula, tipo), marca(marca) {}
-    string Info() const override { /*sobreescritura para el metodo Info()*/
-        return "Vehículo: Patín - Matricula: " + matricula + ", Tipo: " + tipo + ", Marca: " + marca;
+    Patin(string m, string t, string mar)
+        : Vehiculo(m, t), marca(mar) {}
+
+    string Info() {
+        return "Patin - Matricula: " + matricula + ", Tipo: " + tipo + ", Marca: " + marca;
     }
 };
 
-/* Clase Patineta*/
+// Clase patineta - Patineta
 class Patineta : public Vehiculo {
 private:
     string tamaño;
 
 public:
-    Patineta(string matricula, string tipo, string tamaño) : Vehiculo(matricula, tipo), tamaño(tamaño) {}
-    string Info() const override { /*sobreescritura para el metodo Info()*/
-        return "Vehículo: Patineta - Matricula: " + matricula + ", Tipo: " + tipo + ", Tamaño: " + tamaño;
+    Patineta(string m, string t, string tz)
+        : Vehiculo(m, t), tamaño(tz) {}
+
+    string Info() {
+        return "Patineta - Matricula: " + matricula + ", Tipo: " + tipo + ", Tamaño: " + tamaño;
     }
 };
-
