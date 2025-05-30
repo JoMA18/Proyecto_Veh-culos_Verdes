@@ -11,6 +11,7 @@ protected:
     string tipo;
 
 public:
+    Vehiculo() {return "Ninguno"}
     Vehiculo(string m, string t) : matricula(m), tipo(t) {}
 
     virtual string Info() {
@@ -25,6 +26,7 @@ private:
     string tamaño;
 
 public:
+    Bicicleta(){return "00"}
     Bicicleta(string m, string t, string c, string tz)
         : Vehiculo(m, t), color(c), tamaño(tz) {}
 
@@ -40,6 +42,7 @@ private:
     string marca;
 
 public:
+    Patin(){return "00"}
     Patin(string m, string t, string mar)
         : Vehiculo(m, t), marca(mar) {}
 
@@ -54,6 +57,7 @@ private:
     string tamaño;
 
 public:
+    Patineta(){return "00"}
     Patineta(string m, string t, string tz)
         : Vehiculo(m, t), tamaño(tz) {}
 
