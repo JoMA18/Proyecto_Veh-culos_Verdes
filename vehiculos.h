@@ -14,13 +14,16 @@ protected:
     string tipo;
 
 public:
-    Vehiculo() {return "Ninguno"}
+    Vehiculo() {}
     Vehiculo(string m, string t) : matricula(m), tipo(t) {}
 
     virtual string Info() {
         return "Vehiculo - Matricula: " + matricula + ", Tipo: " + tipo;
     }
+    string get_tipo() {return tipo;}
 };
+
+
 
 // Clase Hija - BICI
 class Bicicleta : public Vehiculo {
@@ -29,7 +32,7 @@ private:
     string tamaño;
 
 public:
-    Bicicleta(){return "00"}
+    Bicicleta() {}
     Bicicleta(string m, string t, string c, string tz)
         : Vehiculo(m, t), color(c), tamaño(tz) {}
 
@@ -45,7 +48,7 @@ private:
     string marca;
 
 public:
-    Patin(){return "00"}
+    Patin() {}
     Patin(string m, string t, string mar)
         : Vehiculo(m, t), marca(mar) {}
 
@@ -60,7 +63,7 @@ private:
     string tamaño;
 
 public:
-    Patineta(){return "00"}
+    Patineta() {}
     Patineta(string m, string t, string tz)
         : Vehiculo(m, t), tamaño(tz) {}
 
