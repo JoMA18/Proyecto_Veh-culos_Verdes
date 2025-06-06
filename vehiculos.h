@@ -1,3 +1,6 @@
+#ifndef VEHICULOS_H_
+#define VEHICULOS_H_
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -65,3 +68,5 @@ public:
         return "Patineta - Matricula: " + matricula + ", Tipo: " + tipo + ", Tamaño: " + tamaño;
     }
 };
+
+#endif
