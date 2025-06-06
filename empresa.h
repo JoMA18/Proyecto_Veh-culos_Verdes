@@ -1,3 +1,4 @@
+
 #ifndef EMPRESA_H_
 #define EMPRESA_H_
 
@@ -21,9 +22,12 @@ public:
     Empresa(string n) : nombre(n), lista(0) {}
     
     void creaVehiculo() {
-        agregaBici("01", "bicicleta", "Rojo", "Chica");
-        agregaPatin("02", "patin", "Fila");
-        agregaPatineta("03", "patineta", "Grande");
+        emp[lista] = new Bicicleta("01", "bicicleta", "Rojo", "Chica");
+        lista++;
+        emp[lista] = new Patin("02", "patin", "Fila");
+        lista++;
+        emp[lista] = new Patineta("03", "patineta", "Grande");
+        lista++;
     }
 
     void muestraVehiculo() {
@@ -34,8 +38,8 @@ public:
 
     void muestraVehiculo(string tipoBuscado) {
         for (int i = 0; i < lista; i++) {
-            if (emp[i]->Info().find(tipoBuscado) != string::npos)
-                cout << emp[i]->Info() << endl;
+            if (emp[i] -> get_tipo() == tipoBuscado)
+                cout << emp[i] -> Info();
         }
     }
 
