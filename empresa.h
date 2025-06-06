@@ -3,47 +3,56 @@
 
 #include <string>
 #include <iostream>
-#include "vehiculo.h" 
+#include "vehiculos.h" //
 using namespace std;
 
 
 // Empresa
+
+const int MAX = 1000;
+
 class Empresa {
 private:
-    vector<Vehiculo*> agencia;
+    Vehiculo * emp[MAX];
+    int lista;
     string nombre;
 
 public:
-    Empresa(string n) : nombre(n) {}
-
+    Empresa(string n) : nombre(n), lista(0) {}
+    
     void creaVehiculo() {
-        agregaBici("01", "Ruta", "Rojo", "Chica");
-        agregaPatin("02", "Inline", "Fila");
-        agregaPatineta("03", "Clásica", "Grande");
+        agregaBici("01", "bicicleta", "Rojo", "Chica");
+        agregaPatin("02", "patin", "Fila");
+        agregaPatineta("03", "patineta", "Grande");
     }
 
     void muestraVehiculo() {
-        for (int i = 0; i < agencia.size(); i++) {
-            cout << agencia[i]->Info() << endl;
+        for (int i = 0; i < lista; i++) {
+            cout << emp[i]->Info() << endl;
         }
     }
 
     void muestraVehiculo(string tipoBuscado) {
-        for (int i = 0; i < agencia.size(); i++) {
-            if (agencia[i]->Info().find(tipoBuscado) != string::npos)
-                cout << agencia[i]->Info() << endl;
+        for (int i = 0; i < lista; i++) {
+            if (emp[i]->Info().find(tipoBuscado) != string::npos)
+                cout << emp[i]->Info() << endl;
         }
     }
 
     void agregaBici(string matricula, string tipo, string color, string tamaño) {
-        agencia.push_back(new Bicicleta(matricula, tipo, color, tamaño));
+        emp[lista] = new Bicicleta(matricula, tipo, color, tamaño);
+        lista++; 
     }
 
     void agregaPatin(string matricula, string tipo, string marca) {
-        agencia.push_back(new Patin(matricula, tipo, marca));
+        emp[lista] = new Patin(matricula, tipo, marca);
+        lista++; 
     }
 
     void agregaPatineta(string matricula, string tipo, string tamaño) {
-        agencia.push_back(new Patineta(matricula, tipo, tamaño));
+        emp[lista] = new Patineta(matricula, tipo, tamaño);
+        lista++; 
     }
 };
+
+#endif
