@@ -1,4 +1,3 @@
-
 #ifndef EMPRESA_H_
 #define EMPRESA_H_
 
@@ -19,8 +18,9 @@ private:
     string nombre;
 
 public:
+    Empresa()  : nombre("Empresa de Vehiculos Verdes"), lista(0){}
     Empresa(string n) : nombre(n), lista(0) {}
-    
+
     void creaVehiculo() {
         emp[lista] = new Bicicleta("01", "bicicleta", "Rojo", "Chica");
         lista++;
