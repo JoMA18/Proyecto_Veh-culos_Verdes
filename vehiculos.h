@@ -2,7 +2,7 @@
 #define VEHICULOS_H_
 
 #include <iostream>
-#include <vector>
+
 #include <string>
 
 using namespace std;
@@ -14,11 +14,11 @@ protected:
     string tipo;
 
 public:
-    Vehiculo() {}
+    Vehiculo() : matricula(""), tipo("") {}
     Vehiculo(string m, string t) : matricula(m), tipo(t) {}
 
     virtual string Info() {
-        return "Vehiculo - Matricula: " + matricula + ", Tipo: " + tipo;
+        return "Vehiculo - Matricula: " + matricula + ", Tipo: " + tipo + "\n";
     }
     string get_tipo() {return tipo;}
 };
@@ -32,13 +32,13 @@ private:
     string tamaño;
 
 public:
-    Bicicleta() {}
+    Bicicleta(): color(""), tamaño("") {}
     Bicicleta(string m, string t, string c, string tz)
         : Vehiculo(m, t), color(c), tamaño(tz) {}
 
     string Info() {
         return "Bicicleta - Matricula: " + matricula + ", Tipo: " + tipo +
-               ", Color: " + color + ", Tamaño: " + tamaño;
+               ", Color: " + color + ", Tamaño: " + tamaño + "\n";
     }
 };
 
@@ -48,12 +48,13 @@ private:
     string marca;
 
 public:
-    Patin() {}
+    Patin() : marca("") {}
     Patin(string m, string t, string mar)
         : Vehiculo(m, t), marca(mar) {}
 
     string Info() {
-        return "Patin - Matricula: " + matricula + ", Tipo: " + tipo + ", Marca: " + marca;
+        return "Patin - Matricula: " + matricula + ", Tipo: " + 
+        tipo + ", Marca: " + marca + "\n";
     }
 };
 
@@ -63,12 +64,13 @@ private:
     string tamaño;
 
 public:
-    Patineta() {}
+    Patineta() : tamaño("") {}
     Patineta(string m, string t, string tz)
         : Vehiculo(m, t), tamaño(tz) {}
 
     string Info() {
-        return "Patineta - Matricula: " + matricula + ", Tipo: " + tipo + ", Tamaño: " + tamaño;
+        return "Patineta - Matricula: " + matricula + ", Tipo: " + 
+        tipo + ", Tamaño: " + tamaño + "\n";
     }
 };
 
