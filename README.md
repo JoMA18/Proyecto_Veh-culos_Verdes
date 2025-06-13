@@ -3,8 +3,8 @@
 Este proyecto es un registro de vehículos verdes para una agencia, dicha empresa registra y accede a ala información de los vehículos registrados, que consisten en 3 tipos al ser opciones no contaminantes: Bicicleta, Patín y Patineta.
  
  # Funcionalidad
- El programa permite agregar nuevos vehiculos, ya se una bicicleta, un patín o una patineta
- Permite la visualización de vehiculos registrados previamente y que ya esten guradados en la RAM
+ El programa permite agregar nuevos vehiculos, ya sea una bicicleta, un patín o una patineta
+ Permite la visualización de vehiculos registrados previamente y que ya esten guardados en la RAM
  
 # Consideraciones
 El programa solo corre en la consola y esta hecho con c++ standard por lo que corre en todos los sistemas operativos
